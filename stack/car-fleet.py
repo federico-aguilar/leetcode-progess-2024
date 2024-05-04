@@ -1,31 +1,25 @@
-# def main():
 from collections import deque
-def car_fleet(target, position, speed):
-    #iterate speed, and subtract by target to see how many miles to cover
-    # then just divide by speed to see how many turns
-    # this, is what you then sort
-    combo = []
-    for i in range(len(position)):
-        combo.append([position[i], speed[i]])
-    combo = sorted(combo, key=lambda x: x[0])
-    moves = []
-    for car in combo:
-        pos, spd = car[0], car[1]
-        distance = target - pos
-        moves.append(distance // spd)
+
+def histogram(heights):
+    # heights: List[int]
+    # when current bar itself is bigger than smallest of previous times bar in row, 
+    # erase the rest
+    # initialize stack, smallest in stack, and largestArea
+    # iterate heights
+    # if height > smallest * len(stack), pop out all then set smallest to current height 
+    # and add to stack
+    # else, just add to stack while updating smallest by setting smallest = min(smallest, height)
     stack = deque()
-    fleets = 0
-    for i in range(len(moves) - 1, -1, -1):
-        broken = False
-        while stack and moves[i] > stack[-1]:
-            stack.pop()
-            broken = True
-        if broken is True:
-            fleets += 1
-        stack.append(moves[i])
-    if stack:
-        fleets += 1
+    smallest = heights[0]
+    largestArea = 0
+    for height in heights:
+        smallest = min(smallest, height)
+        stack.append(height)
+        while stack and height > smallest*len(stack):
+            popped = stack.pop(0)
+            smallest = min(popped, smallest)
+
 
 
 if __name__ == "__main__":
-    car_fleet(12, [10, 8, 0, 5, 3], [2, 4, 1, 1, 3])
+    histogram([2,4])
