@@ -37,5 +37,5 @@ def two_sum(nums, tar):
 if __name__ == "__main__":
     print(two_sum([2,7,11,12,15], 9))
 
-# Runtime: 105 ms (beats 58%)
-# Memory: 17.46 MB (beats 58%)
+# Runtime: 105 ms (beats 58%) O(n)
+# Memory: 17.46 MB (beats 58%) O(1)
