@@ -22,7 +22,7 @@
 # if bigger, the pointer that did not move
 # becomes bottleneck
 
-def three_sum(height):
+def container_w_most_water(height):
     lft = 0
     rgt = len(height) - 1
     biggest_container = 0;
@@ -38,7 +38,7 @@ def three_sum(height):
 
 
 if __name__ == "__main__":
-    print(three_sum([1, 1]))
+    print(container_w_most_water([1, 1]))
 
 # Runtime: 516 ms (beats 73.64%)
 # Memory: 29.44 MB (beats 78.48%)
