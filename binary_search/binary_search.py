@@ -26,3 +26,8 @@ def search(nums,target):
 
 if __name__ == "__main__":
     print(search([-1, 0, 3, 5, 9, 12], 2))
+
+# Runtime: 191 ms (beats 59.16%)
+# Memory: 18.16 MB (beats 49.61%)
+# TC: O(log n)
+# SC: O(1)
